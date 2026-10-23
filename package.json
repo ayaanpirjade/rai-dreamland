@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:pages": "tsc -b && vite build --mode ghpages && node scripts/postbuild.mjs",
+    "deploy": "node scripts/deploy-pages.mjs",
     "preview": "vite preview",
     "preview:pages": "vite preview --mode ghpages",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
