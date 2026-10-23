@@ -6,7 +6,7 @@
  *
  * Usage:  npm run deploy      (builds first, then pushes `dist`)
  */
-import { execFileSync } from 'node:child_process'
+import { execFileSync, execSync } from 'node:child_process'
 import { cpSync, existsSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -16,10 +16,7 @@ const dist = join(root, 'dist')
 
 const git = (args, cwd = root) => execFileSync('git', args, { cwd, encoding: 'utf8' }).trim()
 
-const build = execFileSync(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['run', 'build:pages'], {
-  cwd: root,
-  stdio: 'inherit',
-})
+execSync('npm run build:pages', { cwd: root, stdio: 'inherit' })
 
 if (!existsSync(dist)) {
   console.error('✖ dist/ was not generated — build failed.')
@@ -48,4 +45,3 @@ run(['push', '--force', remote, 'gh-pages'])
 rmSync(tmp, { recursive: true, force: true })
 
 console.log('\n✔ Deployed → https://ayaanpirjade.github.io/rai-dreamland/')
-void build
