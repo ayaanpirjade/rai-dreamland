@@ -1,0 +1,35 @@
+{
+  "name": "rai-birthday-dreamland",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "RAI's little 3D birthday dreamland - an immersive, kawaii birthday experience built with React, Three.js and React Three Fiber.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && vite build --mode ghpages && node scripts/postbuild.mjs",
+    "preview": "vite preview",
+    "preview:pages": "vite preview --mode ghpages",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "lint": "tsc --noEmit -p tsconfig.app.json"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.0.0",
+    "@react-three/fiber": "^9.0.0",
+    "framer-motion": "^12.0.0",
+    "lucide-react": "^0.469.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.0",
+    "three": "^0.172.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.172.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "sharp": "^0.35.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0"
+  }
+}

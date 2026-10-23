@@ -1,0 +1,12 @@
+# Normalise line endings so Windows checkouts and the Linux CI build agree.
+* text=auto eol=lf
+
+# Never touch binary artwork.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
